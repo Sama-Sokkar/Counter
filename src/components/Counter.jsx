@@ -25,7 +25,15 @@ function Counter() {
         <RiResetLeftLine />
       </Reset>
       <Row>
-        <Button onClick={() => setCount((count) => count - 1)}>-</Button>
+        <Button
+          onClick={() => {
+            if (count > 0) {
+              setCount((count) => count - 1);
+            }
+          }}
+        >
+          -
+        </Button>
         <Text>{count}</Text>
         <Button onClick={() => setCount((count) => count + 1)}>+</Button>
       </Row>
